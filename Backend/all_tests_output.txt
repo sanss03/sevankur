@@ -1,0 +1,606 @@
+
+> sevankur-backend@1.0.0 test
+> jest --detectOpenHandles --forceExit --verbose
+
+  console.log
+    ✅ MongoDB Connected: 127.0.0.1
+
+      at log (config/db.js:6:17)
+
+  console.error
+    TokenExpiredError {
+      name: 'TokenExpiredError',
+      message: 'jwt expired',
+      expiredAt: 2026-03-29T19:52:47.000Z
+    }
+
+    [0m [90m 23 |[39m       next()[33m;[39m
+     [90m 24 |[39m     } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 25 |[39m       console[33m.[39merror(error)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 26 |[39m       res[33m.[39mstatus([35m401[39m)[33m;[39m
+     [90m 27 |[39m       [36mthrow[39m [36mnew[39m [33mError[39m([32m'Not authorized, token failed'[39m)[33m;[39m
+     [90m 28 |[39m     }[0m
+
+      at error (middleware/authMiddleware.js:25:15)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at next (node_modules/express/lib/router/route.js:149:13)
+      at Route.dispatch (node_modules/express/lib/router/route.js:119:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at node_modules/express/lib/router/index.js:284:15
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at Function.handle (node_modules/express/lib/router/index.js:175:3)
+      at router (node_modules/express/lib/router/index.js:47:12)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at cors (node_modules/cors/lib/index.js:188:7)
+      at node_modules/cors/lib/index.js:224:17
+      at originCallback (node_modules/cors/lib/index.js:214:15)
+      at node_modules/cors/lib/index.js:219:13
+      at optionsCallback (node_modules/cors/lib/index.js:199:9)
+      at corsMiddleware (node_modules/cors/lib/index.js:204:7)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at jsonParser (node_modules/body-parser/lib/types/json.js:113:7)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at expressInit (node_modules/express/lib/middleware/init.js:40:5)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at query (node_modules/express/lib/middleware/query.js:45:5)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at Function.handle (node_modules/express/lib/router/index.js:175:3)
+      at Function.handle (node_modules/express/lib/application.js:181:10)
+      at Server.app (node_modules/express/lib/express.js:39:9)
+
+  console.error
+    JsonWebTokenError {
+      name: 'JsonWebTokenError',
+      message: 'jwt malformed'
+    }
+
+    [0m [90m 23 |[39m       next()[33m;[39m
+     [90m 24 |[39m     } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 25 |[39m       console[33m.[39merror(error)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 26 |[39m       res[33m.[39mstatus([35m401[39m)[33m;[39m
+     [90m 27 |[39m       [36mthrow[39m [36mnew[39m [33mError[39m([32m'Not authorized, token failed'[39m)[33m;[39m
+     [90m 28 |[39m     }[0m
+
+      at error (middleware/authMiddleware.js:25:15)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at next (node_modules/express/lib/router/route.js:149:13)
+      at Route.dispatch (node_modules/express/lib/router/route.js:119:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at node_modules/express/lib/router/index.js:284:15
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at Function.handle (node_modules/express/lib/router/index.js:175:3)
+      at router (node_modules/express/lib/router/index.js:47:12)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at cors (node_modules/cors/lib/index.js:188:7)
+      at node_modules/cors/lib/index.js:224:17
+      at originCallback (node_modules/cors/lib/index.js:214:15)
+      at node_modules/cors/lib/index.js:219:13
+      at optionsCallback (node_modules/cors/lib/index.js:199:9)
+      at corsMiddleware (node_modules/cors/lib/index.js:204:7)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at jsonParser (node_modules/body-parser/lib/types/json.js:113:7)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at expressInit (node_modules/express/lib/middleware/init.js:40:5)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at query (node_modules/express/lib/middleware/query.js:45:5)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at Function.handle (node_modules/express/lib/router/index.js:175:3)
+      at Function.handle (node_modules/express/lib/application.js:181:10)
+      at Server.app (node_modules/express/lib/express.js:39:9)
+
+FAIL tests/integration/auth.test.js (17.716 s)
+  Auth Flow
+    × 1. POST /api/auth/register — should register a new user (94 ms)
+    × 2. POST /api/auth/login — should login with valid credentials (22 ms)
+    × 3. POST /api/auth/login — should reject wrong password (11 ms)
+  Auth Guard — Protected Routes
+    × 4. GET /api/properties — should reject unauthenticated request (no token) (5005 ms)
+    × 5. GET /api/properties — should reject request with expired token (5009 ms)
+    × 6. GET /api/properties — should reject request with malformed token (5016 ms)
+    √ 7. GET /api/properties — should accept request with valid token (65 ms)
+  Input Validation
+    √ 8. POST /api/chat — should reject empty message (25 ms)
+    √ 9. POST /api/chat — should reject missing message field (20 ms)
+    √ 10. GET /api/documents/search — should return 400 without query param (19 ms)
+  System Health & Metrics
+    √ 11. GET /api/system/health — should return connected status (10 ms)
+    √ 12. GET /api/system/metrics — should return memory/uptime data (9 ms)
+  Chat History Pagination
+    √ 13. Chat history should be paginated via query params (84 ms)
+
+  ● Auth Flow › 1. POST /api/auth/register — should register a new user
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected value: 404
+    Received array: [200, 201]
+
+    [0m [90m 46 |[39m       [33m.[39msend({ username[33m:[39m [32m'newuser'[39m[33m,[39m email[33m:[39m [32m'newuser@test.com'[39m[33m,[39m password[33m:[39m [32m'password123'[39m })[33m;[39m
+     [90m 47 |[39m
+    [31m[1m>[22m[39m[90m 48 |[39m     expect([[35m200[39m[33m,[39m [35m201[39m])[33m.[39mtoContain(res[33m.[39mstatus)[33m;[39m
+     [90m    |[39m                        [31m[1m^[22m[39m
+     [90m 49 |[39m     expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'token'[39m)[33m;[39m
+     [90m 50 |[39m   })[33m;[39m
+     [90m 51 |[39m[0m
+
+      at Object.toContain (tests/integration/auth.test.js:48:24)
+
+  ● Auth Flow › 2. POST /api/auth/login — should login with valid credentials
+
+    expect(received).toHaveProperty(path)
+
+    Expected path: "token"
+    Received path: []
+
+    Received value: {"message": "Login processing"}
+
+    [0m [90m 56 |[39m
+     [90m 57 |[39m     expect(res[33m.[39mstatus)[33m.[39mtoBe([35m200[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 58 |[39m     expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'token'[39m)[33m;[39m
+     [90m    |[39m                      [31m[1m^[22m[39m
+     [90m 59 |[39m   })[33m;[39m
+     [90m 60 |[39m
+     [90m 61 |[39m   it([32m'3. POST /api/auth/login — should reject wrong password'[39m[33m,[39m [36masync[39m () [33m=>[39m {[0m
+
+      at Object.toHaveProperty (tests/integration/auth.test.js:58:22)
+
+  ● Auth Flow › 3. POST /api/auth/login — should reject wrong password
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 400
+    Received:    200
+
+    [0m [90m 64 |[39m       [33m.[39msend({ email[33m:[39m [32m'newuser@test.com'[39m[33m,[39m password[33m:[39m [32m'wrong_pass'[39m })[33m;[39m
+     [90m 65 |[39m
+    [31m[1m>[22m[39m[90m 66 |[39m     expect(res[33m.[39mstatus)[33m.[39mtoBeGreaterThanOrEqual([35m400[39m)[33m;[39m
+     [90m    |[39m                        [31m[1m^[22m[39m
+     [90m 67 |[39m     expect(res[33m.[39mbody)[33m.[39mnot[33m.[39mtoHaveProperty([32m'token'[39m)[33m;[39m
+     [90m 68 |[39m   })[33m;[39m
+     [90m 69 |[39m[0m
+
+      at Object.toBeGreaterThanOrEqual (tests/integration/auth.test.js:66:24)
+
+  ● Auth Guard — Protected Routes › 4. GET /api/properties — should reject unauthenticated request (no token)
+
+    thrown: "Exceeded timeout of 5000 ms for a test.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+    [0m [90m 74 |[39m describe([32m'Auth Guard — Protected Routes'[39m[33m,[39m () [33m=>[39m {
+     [90m 75 |[39m
+    [31m[1m>[22m[39m[90m 76 |[39m   it([32m'4. GET /api/properties — should reject unauthenticated request (no token)'[39m[33m,[39m [36masync[39m () [33m=>[39m {
+     [90m    |[39m   [31m[1m^[22m[39m
+     [90m 77 |[39m     [36mconst[39m res [33m=[39m [36mawait[39m request(app)[33m.[39m[36mget[39m([32m'/api/properties'[39m)[33m;[39m
+     [90m 78 |[39m     expect(res[33m.[39mstatus)[33m.[39mtoBe([35m401[39m)[33m;[39m
+     [90m 79 |[39m   })[33m;[39m[0m
+
+      at it (tests/integration/auth.test.js:76:3)
+      at Object.describe (tests/integration/auth.test.js:74:1)
+
+  ● Auth Guard — Protected Routes › 4. GET /api/properties — should reject unauthenticated request (no token)
+
+    Not authorized, no token
+
+    [0m [90m 31 |[39m   [36mif[39m ([33m![39mtoken) {
+     [90m 32 |[39m     res[33m.[39mstatus([35m401[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 33 |[39m     [36mthrow[39m [36mnew[39m [33mError[39m([32m'Not authorized, no token'[39m)[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 34 |[39m   }
+     [90m 35 |[39m }[33m;[39m
+     [90m 36 |[39m[0m
+
+      at protect (middleware/authMiddleware.js:33:11)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at next (node_modules/express/lib/router/route.js:149:13)
+      at Route.dispatch (node_modules/express/lib/router/route.js:119:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at node_modules/express/lib/router/index.js:284:15
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at Function.handle (node_modules/express/lib/router/index.js:175:3)
+      at router (node_modules/express/lib/router/index.js:47:12)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at cors (node_modules/cors/lib/index.js:188:7)
+      at node_modules/cors/lib/index.js:224:17
+      at originCallback (node_modules/cors/lib/index.js:214:15)
+      at node_modules/cors/lib/index.js:219:13
+      at optionsCallback (node_modules/cors/lib/index.js:199:9)
+      at corsMiddleware (node_modules/cors/lib/index.js:204:7)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at jsonParser (node_modules/body-parser/lib/types/json.js:113:7)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at expressInit (node_modules/express/lib/middleware/init.js:40:5)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at query (node_modules/express/lib/middleware/query.js:45:5)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at Function.handle (node_modules/express/lib/router/index.js:175:3)
+      at Function.handle (node_modules/express/lib/application.js:181:10)
+      at Server.app (node_modules/express/lib/express.js:39:9)
+
+  ● Auth Guard — Protected Routes › 5. GET /api/properties — should reject request with expired token
+
+    thrown: "Exceeded timeout of 5000 ms for a test.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+    [0m [90m 79 |[39m   })[33m;[39m
+     [90m 80 |[39m
+    [31m[1m>[22m[39m[90m 81 |[39m   it([32m'5. GET /api/properties — should reject request with expired token'[39m[33m,[39m [36masync[39m () [33m=>[39m {
+     [90m    |[39m   [31m[1m^[22m[39m
+     [90m 82 |[39m     [36mconst[39m expiredToken [33m=[39m jwt[33m.[39msign({ id[33m:[39m [36mnew[39m mongoose[33m.[39m[33mTypes[39m[33m.[39m[33mObjectId[39m() }[33m,[39m process[33m.[39menv[33m.[39m[33mJWT_SECRET[39m[33m,[39m { expiresIn[33m:[39m [32m'-1s'[39m })[33m;[39m
+     [90m 83 |[39m     [36mconst[39m res [33m=[39m [36mawait[39m request(app)
+     [90m 84 |[39m       [33m.[39m[36mget[39m([32m'/api/properties'[39m)[0m
+
+      at it (tests/integration/auth.test.js:81:3)
+      at Object.describe (tests/integration/auth.test.js:74:1)
+
+  ● Auth Guard — Protected Routes › 5. GET /api/properties — should reject request with expired token
+
+    Not authorized, token failed
+
+    [0m [90m 25 |[39m       console[33m.[39merror(error)[33m;[39m
+     [90m 26 |[39m       res[33m.[39mstatus([35m401[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 27 |[39m       [36mthrow[39m [36mnew[39m [33mError[39m([32m'Not authorized, token failed'[39m)[33m;[39m
+     [90m    |[39m             [31m[1m^[22m[39m
+     [90m 28 |[39m     }
+     [90m 29 |[39m   }
+     [90m 30 |[39m[0m
+
+      at protect (middleware/authMiddleware.js:27:13)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at next (node_modules/express/lib/router/route.js:149:13)
+      at Route.dispatch (node_modules/express/lib/router/route.js:119:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at node_modules/express/lib/router/index.js:284:15
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at Function.handle (node_modules/express/lib/router/index.js:175:3)
+      at router (node_modules/express/lib/router/index.js:47:12)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at cors (node_modules/cors/lib/index.js:188:7)
+      at node_modules/cors/lib/index.js:224:17
+      at originCallback (node_modules/cors/lib/index.js:214:15)
+      at node_modules/cors/lib/index.js:219:13
+      at optionsCallback (node_modules/cors/lib/index.js:199:9)
+      at corsMiddleware (node_modules/cors/lib/index.js:204:7)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at jsonParser (node_modules/body-parser/lib/types/json.js:113:7)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at expressInit (node_modules/express/lib/middleware/init.js:40:5)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at query (node_modules/express/lib/middleware/query.js:45:5)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at Function.handle (node_modules/express/lib/router/index.js:175:3)
+      at Function.handle (node_modules/express/lib/application.js:181:10)
+      at Server.app (node_modules/express/lib/express.js:39:9)
+
+  ● Auth Guard — Protected Routes › 6. GET /api/properties — should reject request with malformed token
+
+    thrown: "Exceeded timeout of 5000 ms for a test.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+    [0m [90m 88 |[39m   })[33m;[39m
+     [90m 89 |[39m
+    [31m[1m>[22m[39m[90m 90 |[39m   it([32m'6. GET /api/properties — should reject request with malformed token'[39m[33m,[39m [36masync[39m () [33m=>[39m {
+     [90m    |[39m   [31m[1m^[22m[39m
+     [90m 91 |[39m     [36mconst[39m res [33m=[39m [36mawait[39m request(app)
+     [90m 92 |[39m       [33m.[39m[36mget[39m([32m'/api/properties'[39m)
+     [90m 93 |[39m       [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m'Bearer not.a.real.token'[39m)[33m;[39m[0m
+
+      at it (tests/integration/auth.test.js:90:3)
+      at Object.describe (tests/integration/auth.test.js:74:1)
+
+  ● Auth Guard — Protected Routes › 6. GET /api/properties — should reject request with malformed token
+
+    Not authorized, token failed
+
+    [0m [90m 25 |[39m       console[33m.[39merror(error)[33m;[39m
+     [90m 26 |[39m       res[33m.[39mstatus([35m401[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 27 |[39m       [36mthrow[39m [36mnew[39m [33mError[39m([32m'Not authorized, token failed'[39m)[33m;[39m
+     [90m    |[39m             [31m[1m^[22m[39m
+     [90m 28 |[39m     }
+     [90m 29 |[39m   }
+     [90m 30 |[39m[0m
+
+      at protect (middleware/authMiddleware.js:27:13)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at next (node_modules/express/lib/router/route.js:149:13)
+      at Route.dispatch (node_modules/express/lib/router/route.js:119:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at node_modules/express/lib/router/index.js:284:15
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at Function.handle (node_modules/express/lib/router/index.js:175:3)
+      at router (node_modules/express/lib/router/index.js:47:12)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at cors (node_modules/cors/lib/index.js:188:7)
+      at node_modules/cors/lib/index.js:224:17
+      at originCallback (node_modules/cors/lib/index.js:214:15)
+      at node_modules/cors/lib/index.js:219:13
+      at optionsCallback (node_modules/cors/lib/index.js:199:9)
+      at corsMiddleware (node_modules/cors/lib/index.js:204:7)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at jsonParser (node_modules/body-parser/lib/types/json.js:113:7)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at expressInit (node_modules/express/lib/middleware/init.js:40:5)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at query (node_modules/express/lib/middleware/query.js:45:5)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at Function.handle (node_modules/express/lib/router/index.js:175:3)
+      at Function.handle (node_modules/express/lib/application.js:181:10)
+      at Server.app (node_modules/express/lib/express.js:39:9)
+
+  console.log
+    ✅ MongoDB Connected: 127.0.0.1
+
+      at log (config/db.js:6:17)
+
+FAIL tests/integration/database.test.js
+  Property API — CRUD & Filtering
+    √ 1. GET /api/properties — should return all properties (23 ms)
+    √ 2. GET /api/properties?city=Commerce+City — should filter by city (15 ms)
+    √ 3. POST /api/properties — should create a new property (19 ms)
+    √ 4. GET /api/properties/:id — should return single property by Mongo ID (18 ms)
+    √ 5. PUT /api/properties/:id — should update property value (25 ms)
+    √ 6. GET /api/properties/stats — should return aggregated stats (26 ms)
+    √ 7. DELETE /api/properties/:id — should delete a property (31 ms)
+  Tax Records & Defaulters API
+    × 8. POST /api/tax-records — should create a tax record (22 ms)
+    √ 9. GET /api/tax-records — should return tax records list (32 ms)
+    √ 10. GET /api/defaulters — should return defaulter list (32 ms)
+  Analytics API (Admin RBAC)
+    √ 11. GET /api/analytics/dashboard — officer can access dashboard (35 ms)
+    √ 12. GET /api/analytics/tax — admin can access tax analytics (29 ms)
+    √ 13. GET /api/analytics/tax — officer is FORBIDDEN from admin analytics (12 ms)
+
+  ● Tax Records & Defaulters API › 8. POST /api/tax-records — should create a tax record
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 201
+    Received: 404
+
+    [0m [90m 171 |[39m       })[33m;[39m
+     [90m 172 |[39m
+    [31m[1m>[22m[39m[90m 173 |[39m     expect(res[33m.[39mstatus)[33m.[39mtoBe([35m201[39m)[33m;[39m
+     [90m     |[39m                        [31m[1m^[22m[39m
+     [90m 174 |[39m     expect(res[33m.[39mbody[33m.[39mdata[33m.[39mtaxYear)[33m.[39mtoBe([35m2025[39m)[33m;[39m
+     [90m 175 |[39m     taxRecordId [33m=[39m res[33m.[39mbody[33m.[39mdata[33m.[39m_id[33m;[39m
+     [90m 176 |[39m   })[33m;[39m[0m
+
+      at Object.toBe (tests/integration/database.test.js:173:24)
+
+  console.log
+    ✅ MongoDB Connected: 127.0.0.1
+
+      at log (config/db.js:6:17)
+
+  console.error
+    ❌ KnowledgeBase Error: Document validation failed: fileType: Path `fileType` is required.
+
+    [0m [90m 31 |[39m       [36mreturn[39m document[33m;[39m
+     [90m 32 |[39m     } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 33 |[39m       console[33m.[39merror([32m"❌ KnowledgeBase Error:"[39m[33m,[39m error[33m.[39mmessage)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 34 |[39m       [36mthrow[39m error[33m;[39m
+     [90m 35 |[39m     }
+     [90m 36 |[39m   }[0m
+
+      at DocumentKnowledgeBase.error [as saveDocumentContent] (services/documentKnowledgeBase.js:33:15)
+      at exports.uploadDocument (controllers/documentController.js:29:5)
+
+FAIL tests/integration/document.test.js
+  Document Upload & RAG Pipeline
+    × 1. POST /api/documents/upload — should upload, parse, and chunk a document (85 ms)
+    √ 2. GET /api/documents — should list uploaded documents (17 ms)
+    × 3. GET /api/documents/search?query=… — should return relevant chunks from RAG index (14 ms)
+    √ 4. GET /api/documents/:id/context — should return paginated chunks for a document (1 ms)
+    √ 5. DELETE /api/documents/:id — should delete document and cascade chunks (1 ms)
+    √ 6. POST /api/documents/upload — should reject non-PDF/DOCX files (28 ms)
+  Document-Grounded Chat (RAG) Flow
+    √ 7. Chat DOCUMENT_QUERY with seeded chunks should return grounded answer (35 ms)
+
+  ● Document Upload & RAG Pipeline › 1. POST /api/documents/upload — should upload, parse, and chunk a document
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 201
+    Received: 500
+
+    [0m [90m 76 |[39m       [33m.[39mattach([32m'document'[39m[33m,[39m tmpPath)[33m;[39m            [90m// multipart/form-data[39m
+     [90m 77 |[39m
+    [31m[1m>[22m[39m[90m 78 |[39m     expect(res[33m.[39mstatus)[33m.[39mtoBe([35m201[39m)[33m;[39m
+     [90m    |[39m                        [31m[1m^[22m[39m
+     [90m 79 |[39m     expect(res[33m.[39mbody[33m.[39msuccess)[33m.[39mtoBe([36mtrue[39m)[33m;[39m
+     [90m 80 |[39m     expect(res[33m.[39mbody[33m.[39mdata)[33m.[39mtoHaveProperty([32m'_id'[39m)[33m;[39m
+     [90m 81 |[39m     expect(res[33m.[39mbody[33m.[39mdata[33m.[39mfileName)[33m.[39mtoContain([32m'test_upload'[39m)[33m;[39m[0m
+
+      at Object.toBe (tests/integration/document.test.js:78:24)
+
+  ● Document Upload & RAG Pipeline › 3. GET /api/documents/search?query=… — should return relevant chunks from RAG index
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 500
+
+    [0m [90m 106 |[39m       [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m authHeader)[33m;[39m
+     [90m 107 |[39m
+    [31m[1m>[22m[39m[90m 108 |[39m     expect(res[33m.[39mstatus)[33m.[39mtoBe([35m200[39m)[33m;[39m
+     [90m     |[39m                        [31m[1m^[22m[39m
+     [90m 109 |[39m     expect(res[33m.[39mbody[33m.[39msuccess)[33m.[39mtoBe([36mtrue[39m)[33m;[39m
+     [90m 110 |[39m     [90m// Even with 0 chunks (full-text index may be empty in memory), structure must be correct[39m
+     [90m 111 |[39m     expect([33mArray[39m[33m.[39misArray(res[33m.[39mbody[33m.[39mdata))[33m.[39mtoBe([36mtrue[39m)[33m;[39m[0m
+
+      at Object.toBe (tests/integration/document.test.js:108:24)
+
+  console.log
+    ✅ MongoDB Connected: 127.0.0.1
+
+      at log (config/db.js:6:17)
+
+PASS tests/integration/chat.test.js
+  Chat Integration & Routing Flow
+    √ 1. should handle a simple GREETING intent via AI (43 ms)
+    √ 2. should detect DATA_QUERY intent, query DB correctly, and generate grounded response (26 ms)
+    √ 3. should detect DOCUMENT_QUERY intent and fallback gracefully when no docs present (23 ms)
+    √ 4. should log chat history in MongoDB (5 ms)
+
+Test Suites: 3 failed, 1 passed, 4 total
+Tests:       9 failed, 28 passed, 37 total
+Snapshots:   0 total
+Time:        21.116 s
+Ran all test suites.
+
+Jest has detected the following 3 open handles potentially keeping Jest from exiting:
+
+  ●  TCPSERVERWRAP
+
+    [0m [90m 75 |[39m
+     [90m 76 |[39m   it([32m'4. GET /api/properties — should reject unauthenticated request (no token)'[39m[33m,[39m [36masync[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 77 |[39m     [36mconst[39m res [33m=[39m [36mawait[39m request(app)[33m.[39m[36mget[39m([32m'/api/properties'[39m)[33m;[39m
+     [90m    |[39m                                    [31m[1m^[22m[39m
+     [90m 78 |[39m     expect(res[33m.[39mstatus)[33m.[39mtoBe([35m401[39m)[33m;[39m
+     [90m 79 |[39m   })[33m;[39m
+     [90m 80 |[39m[0m
+
+      at Test.serverAddress (node_modules/supertest/lib/test.js:63:35)
+      at new Test (node_modules/supertest/lib/test.js:49:14)
+      at Object.obj.<computed> [as get] (node_modules/supertest/index.js:40:18)
+      at Object.get (tests/integration/auth.test.js:77:36)
+
+
+  ●  TCPSERVERWRAP
+
+    [0m [90m 82 |[39m     [36mconst[39m expiredToken [33m=[39m jwt[33m.[39msign({ id[33m:[39m [36mnew[39m mongoose[33m.[39m[33mTypes[39m[33m.[39m[33mObjectId[39m() }[33m,[39m process[33m.[39menv[33m.[39m[33mJWT_SECRET[39m[33m,[39m { expiresIn[33m:[39m [32m'-1s'[39m })[33m;[39m
+     [90m 83 |[39m     [36mconst[39m res [33m=[39m [36mawait[39m request(app)
+    [31m[1m>[22m[39m[90m 84 |[39m       [33m.[39m[36mget[39m([32m'/api/properties'[39m)
+     [90m    |[39m        [31m[1m^[22m[39m
+     [90m 85 |[39m       [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${expiredToken}`[39m)[33m;[39m
+     [90m 86 |[39m
+     [90m 87 |[39m     expect(res[33m.[39mstatus)[33m.[39mtoBe([35m401[39m)[33m;[39m[0m
+
+      at Test.serverAddress (node_modules/supertest/lib/test.js:63:35)
+      at new Test (node_modules/supertest/lib/test.js:49:14)
+      at Object.obj.<computed> [as get] (node_modules/supertest/index.js:40:18)
+      at Object.get (tests/integration/auth.test.js:84:8)
+
+
+  ●  TCPSERVERWRAP
+
+    [0m [90m 90 |[39m   it([32m'6. GET /api/properties — should reject request with malformed token'[39m[33m,[39m [36masync[39m () [33m=>[39m {
+     [90m 91 |[39m     [36mconst[39m res [33m=[39m [36mawait[39m request(app)
+    [31m[1m>[22m[39m[90m 92 |[39m       [33m.[39m[36mget[39m([32m'/api/properties'[39m)
+     [90m    |[39m        [31m[1m^[22m[39m
+     [90m 93 |[39m       [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m'Bearer not.a.real.token'[39m)[33m;[39m
+     [90m 94 |[39m
+     [90m 95 |[39m     expect(res[33m.[39mstatus)[33m.[39mtoBe([35m401[39m)[33m;[39m[0m
+
+      at Test.serverAddress (node_modules/supertest/lib/test.js:63:35)
+      at new Test (node_modules/supertest/lib/test.js:49:14)
+      at Object.obj.<computed> [as get] (node_modules/supertest/index.js:40:18)
+      at Object.get (tests/integration/auth.test.js:92:8)
+

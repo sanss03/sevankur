@@ -1,0 +1,64 @@
+
+> sevankur-backend@1.0.0 test
+> jest --detectOpenHandles --forceExit
+
+FAIL tests/integration/database.test.js
+  ● Console
+
+    console.log
+      ✅ MongoDB Connected: 127.0.0.1
+
+      at log (config/db.js:6:17)
+
+  ● Tax Records & Defaulters API › 8. POST /api/tax-records — should create a tax record
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 2025
+    Received: "2025"
+
+    [0m [90m 173 |[39m
+     [90m 174 |[39m     expect(res[33m.[39mstatus)[33m.[39mtoBe([35m201[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 175 |[39m     expect(res[33m.[39mbody[33m.[39mdata[33m.[39mtaxYear)[33m.[39mtoBe([35m2025[39m)[33m;[39m
+     [90m     |[39m                                   [31m[1m^[22m[39m
+     [90m 176 |[39m     taxRecordId [33m=[39m res[33m.[39mbody[33m.[39mdata[33m.[39m_id[33m;[39m
+     [90m 177 |[39m   })[33m;[39m
+     [90m 178 |[39m[0m
+
+      at Object.toBe (tests/integration/database.test.js:175:35)
+
+PASS tests/integration/auth.test.js
+  ● Console
+
+    console.log
+      ✅ MongoDB Connected: 127.0.0.1
+
+      at log (config/db.js:6:17)
+
+PASS tests/integration/document.test.js
+  ● Console
+
+    console.log
+      ✅ MongoDB Connected: 127.0.0.1
+
+      at log (config/db.js:6:17)
+
+    console.log
+      ✅ KnowledgeBase: 1 chunks stored for doc 69c9847f4ffc1a980be324d6
+
+      at DocumentKnowledgeBase.log [as saveDocumentContent] (services/documentKnowledgeBase.js:30:15)
+
+PASS tests/integration/chat.test.js
+  ● Console
+
+    console.log
+      ✅ MongoDB Connected: 127.0.0.1
+
+      at log (config/db.js:6:17)
+
+
+Test Suites: 1 failed, 3 passed, 4 total
+Tests:       1 failed, 36 passed, 37 total
+Snapshots:   0 total
+Time:        5.112 s
+Ran all test suites.

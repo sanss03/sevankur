@@ -1,0 +1,75 @@
+
+> sevankur-backend@1.0.0 test
+> jest --detectOpenHandles --forceExit
+
+  console.log
+    ✅ MongoDB Connected: 127.0.0.1
+
+      at log (config/db.js:6:17)
+
+FAIL tests/integration/chat.test.js
+  Chat Integration & Routing Flow
+    × 1. should handle a simple GREETING intent via AI (2 ms)
+    × 2. should detect DATA_QUERY intent, query DB correctly, and generate grounded response (1 ms)
+    × 3. should detect DOCUMENT_QUERY intent and fallback gracefully when no docs present
+    × 4. should log chat history in MongoDB
+
+  ● Chat Integration & Routing Flow › 1. should handle a simple GREETING intent via AI
+
+    ValidationError: Property validation failed: address.country: Path `address.country` is required., address.zipCode: Path `address.zipCode` is required., address.state: Path `address.state` is required., address.street: Path `address.street` is required., ward: Path `ward` is required., taxId: Path `taxId` is required., propertyType: `Residential` is not a valid enum value for path `propertyType`., status: `Active` is not a valid enum value for path `status`.
+
+      at model.Document.invalidate (node_modules/mongoose/lib/document.js:3381:32)
+      at node_modules/mongoose/lib/document.js:3142:17
+      at node_modules/mongoose/lib/schemaType.js:1446:9
+
+  ● Chat Integration & Routing Flow › 2. should detect DATA_QUERY intent, query DB correctly, and generate grounded response
+
+    ValidationError: Property validation failed: address.country: Path `address.country` is required., address.zipCode: Path `address.zipCode` is required., address.state: Path `address.state` is required., address.street: Path `address.street` is required., ward: Path `ward` is required., taxId: Path `taxId` is required., propertyType: `Residential` is not a valid enum value for path `propertyType`., status: `Active` is not a valid enum value for path `status`.
+
+      at model.Document.invalidate (node_modules/mongoose/lib/document.js:3381:32)
+      at node_modules/mongoose/lib/document.js:3142:17
+      at node_modules/mongoose/lib/schemaType.js:1446:9
+
+  ● Chat Integration & Routing Flow › 3. should detect DOCUMENT_QUERY intent and fallback gracefully when no docs present
+
+    ValidationError: Property validation failed: address.country: Path `address.country` is required., address.zipCode: Path `address.zipCode` is required., address.state: Path `address.state` is required., address.street: Path `address.street` is required., ward: Path `ward` is required., taxId: Path `taxId` is required., propertyType: `Residential` is not a valid enum value for path `propertyType`., status: `Active` is not a valid enum value for path `status`.
+
+      at model.Document.invalidate (node_modules/mongoose/lib/document.js:3381:32)
+      at node_modules/mongoose/lib/document.js:3142:17
+      at node_modules/mongoose/lib/schemaType.js:1446:9
+
+  ● Chat Integration & Routing Flow › 4. should log chat history in MongoDB
+
+    ValidationError: Property validation failed: address.country: Path `address.country` is required., address.zipCode: Path `address.zipCode` is required., address.state: Path `address.state` is required., address.street: Path `address.street` is required., ward: Path `ward` is required., taxId: Path `taxId` is required., propertyType: `Residential` is not a valid enum value for path `propertyType`., status: `Active` is not a valid enum value for path `status`.
+
+      at model.Document.invalidate (node_modules/mongoose/lib/document.js:3381:32)
+      at node_modules/mongoose/lib/document.js:3142:17
+      at node_modules/mongoose/lib/schemaType.js:1446:9
+
+Test Suites: 1 failed, 1 total
+Tests:       4 failed, 4 total
+Snapshots:   0 total
+Time:        4.363 s, estimated 5 s
+Ran all test suites.
+
+Jest has detected the following 1 open handle potentially keeping Jest from exiting:
+
+  ●  CustomGC
+
+    [0m [90m 1 |[39m [36mconst[39m fs [33m=[39m require([32m'fs'[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 2 |[39m [36mconst[39m pdf [33m=[39m require([32m'pdf-parse'[39m)[33m;[39m
+     [90m   |[39m             [31m[1m^[22m[39m
+     [90m 3 |[39m [36mconst[39m mammoth [33m=[39m require([32m'mammoth'[39m)[33m;[39m
+     [90m 4 |[39m
+     [90m 5 |[39m [90m/**[39m[0m
+
+      at requireNative (node_modules/@napi-rs/canvas/js-binding.js:100:16)
+      at Object.<anonymous> (node_modules/@napi-rs/canvas/js-binding.js:319:17)
+      at Object.<anonymous> (node_modules/@napi-rs/canvas/index.js:19:5)
+      at Module.createRequire (node_modules/pdf-parse/node_modules/pdfjs-dist/legacy/build/pdf.mjs:14339:56)
+      at Object.require (services/documentParserService.js:2:13)
+      at Object.require (controllers/documentController.js:2:31)
+      at Object.require (routes/documentRoutes.js:3:28)
+      at Object.require (server.js:29:27)
+      at Object.require (tests/integration/chat.test.js:30:9)
+

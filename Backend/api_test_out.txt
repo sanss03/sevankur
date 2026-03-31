@@ -1,0 +1,124 @@
+  console.log
+    ✅ MongoDB Connected: 127.0.0.1
+
+      at log (config/db.js:6:17)
+
+  console.log
+    ✅ KnowledgeBase: 1 chunks stored for doc 69c9858552e5296bd955c2ea
+
+      at DocumentKnowledgeBase.log [as saveDocumentContent] (services/documentKnowledgeBase.js:30:15)
+
+FAIL tests/api/endpoints.test.js
+  [SYSTEM] Health & Metrics
+    √ GET /api/system/health → 200 with db + llm status (17 ms)
+    √ GET /api/system/metrics → 200 with uptime + memory (6 ms)
+    √ GET /api/test → 200 basic ping (4 ms)
+  [AUTH] Register & Login
+    √ POST /api/auth/register → 201 + token (88 ms)
+    √ POST /api/auth/register → 409 duplicate email (10 ms)
+    √ POST /api/auth/register → 400 missing email (5 ms)
+    √ POST /api/auth/login → 200 + token (70 ms)
+    √ POST /api/auth/login → 401 wrong password (65 ms)
+    √ POST /api/auth/login → 400 missing body (5 ms)
+  [AUTH GUARD] Token Validation
+    √ → 401 with no token (8 ms)
+    √ → 401 with expired token (5 ms)
+    √ → 401 with malformed token (5 ms)
+    √ → 200 with valid officer token (9 ms)
+  [PROPERTIES] CRUD & Filtering
+    √ GET /api/properties → 200 list (7 ms)
+    √ GET /api/properties?ward=Ward+9 → filtered list (8 ms)
+    √ GET /api/properties/stats → 200 aggregation (11 ms)
+    √ POST /api/properties → 201 create (10 ms)
+    √ GET /api/properties/:id → 200 single (6 ms)
+    √ GET /api/properties/:id → 500/404 invalid id (7 ms)
+    √ PUT /api/properties/:id → 200 update value (9 ms)
+    √ DELETE /api/properties/:id → 200 then 404 (12 ms)
+  [TAX RECORDS] CRUD
+    √ GET /api/tax-records → 200 list (15 ms)
+    √ GET /api/tax-records?status=pending → filtered list (9 ms)
+    √ GET /api/tax-records/stats → 200 aggregation (7 ms)
+    √ POST /api/tax-records → 201 create (6 ms)
+    √ PUT /api/tax-records/:id/pay → 200 partial payment (9 ms)
+    √ POST /api/tax-records/detect-overdue → 200 (6 ms)
+  [DEFAULTERS] Listing & Checks
+    √ GET /api/defaulters → 200 list (9 ms)
+    √ GET /api/defaulters/stats → 200 summary (8 ms)
+    × GET /api/defaulters/check/:propertyId → 200 status check (6 ms)
+  [ANALYTICS] Dashboard & RBAC
+    √ GET /api/analytics/dashboard → 200 for officer (11 ms)
+    √ GET /api/analytics/tax → 200 for admin (9 ms)
+    √ GET /api/analytics/property → 200 for admin (9 ms)
+    √ GET /api/analytics/compliance → 200 for admin (9 ms)
+    √ GET /api/analytics/tax → 403 for officer (RBAC) (6 ms)
+    √ GET /api/analytics/property → 403 for officer (RBAC) (4 ms)
+  [CHAT] Message Processing
+    √ GET /api/chat → 200 capability check (2 ms)
+    √ POST /api/chat → 400 empty message (4 ms)
+    √ POST /api/chat → 400 missing message field (5 ms)
+    √ POST /api/chat → 200 with mocked Grok AI (19 ms)
+    √ POST /api/chat → 401 without auth (4 ms)
+  [DOCUMENTS] Upload, Search & Management
+    √ GET /api/documents → 200 empty list initially (9 ms)
+    √ POST /api/documents/upload → 201 success (21 ms)
+    √ POST /api/documents/upload → 400 no file (4 ms)
+    √ POST /api/documents/upload → 400 wrong file type (.txt) (9 ms)
+    √ GET /api/documents/search → 400 missing query param (6 ms)
+    √ GET /api/documents/search?query=… → 200 results array (6 ms)
+    √ GET /api/documents/:id/context → 200 paginated chunks (9 ms)
+    √ DELETE /api/documents/:id → 200 cascade delete (9 ms)
+  [HISTORY] Message Log
+    √ GET /api/history → 200 list (5 ms)
+    √ GET /api/history/export → 200 export (5 ms)
+    √ POST /api/history/save → 201 saves a message (6 ms)
+    √ DELETE /api/history/:messageId → 200 deletes a message (4 ms)
+    × DELETE /api/history/clear → 200 clears all messages (3 ms)
+  [USER] Profile & Settings
+    √ GET /api/user/profile → 200 or 404 (no-auth route) (7 ms)
+    √ GET /api/user/settings → 200 with defaults (6 ms)
+    √ PUT /api/user/profile → 200 update (6 ms)
+  [USERS] Admin Route
+    √ GET /api/users → 200 or 401 (auth-gated) (4 ms)
+  [404] Not Found Handler
+    √ GET /api/nonexistent → 404 (4 ms)
+    √ POST /api/nonexistent → 404 (4 ms)
+
+  ● [DEFAULTERS] Listing & Checks › GET /api/defaulters/check/:propertyId → 200 status check
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+    [0m [90m 318 |[39m   it([32m'GET /api/defaulters/check/:propertyId → 200 status check'[39m[33m,[39m [36masync[39m () [33m=>[39m {
+     [90m 319 |[39m     [36mconst[39m r [33m=[39m [36mawait[39m request(app)[33m.[39m[36mget[39m([32m`/api/defaulters/check/${testPropertyId}`[39m)[33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m officerHeader)[33m;[39m
+    [31m[1m>[22m[39m[90m 320 |[39m     expect(r[33m.[39mstatus)[33m.[39mtoBe([35m200[39m)[33m;[39m
+     [90m     |[39m                      [31m[1m^[22m[39m
+     [90m 321 |[39m   })[33m;[39m
+     [90m 322 |[39m })[33m;[39m
+     [90m 323 |[39m[0m
+
+      at Object.toBe (tests/api/endpoints.test.js:320:22)
+
+  ● [HISTORY] Message Log › DELETE /api/history/clear → 200 clears all messages
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 500
+
+    [0m [90m 502 |[39m   it([32m'DELETE /api/history/clear → 200 clears all messages'[39m[33m,[39m [36masync[39m () [33m=>[39m {
+     [90m 503 |[39m     [36mconst[39m r [33m=[39m [36mawait[39m request(app)[33m.[39m[36mdelete[39m([32m'/api/history/clear'[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 504 |[39m     expect(r[33m.[39mstatus)[33m.[39mtoBe([35m200[39m)[33m;[39m
+     [90m     |[39m                      [31m[1m^[22m[39m
+     [90m 505 |[39m     expect(r[33m.[39mbody[33m.[39msuccess)[33m.[39mtoBe([36mtrue[39m)[33m;[39m
+     [90m 506 |[39m   })[33m;[39m
+     [90m 507 |[39m })[33m;[39m[0m
+
+      at Object.toBe (tests/api/endpoints.test.js:504:22)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 58 passed, 60 total
+Snapshots:   0 total
+Time:        2.706 s
+Ran all test suites matching tests/api/endpoints.test.js.

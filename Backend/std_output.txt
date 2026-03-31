@@ -1,0 +1,49 @@
+  console.log
+    ✅ MongoDB Connected: 127.0.0.1
+
+      at log (config/db.js:6:17)
+
+FAIL tests/integration/chat.test.js
+  Chat Integration & Routing Flow
+    × 1. should handle a simple GREETING intent via AI (2 ms)
+    × 2. should detect DATA_QUERY intent, query DB correctly, and generate grounded response (1 ms)
+    × 3. should detect DOCUMENT_QUERY intent and fallback gracefully when no docs present
+    × 4. should log chat history in MongoDB
+
+  ● Chat Integration & Routing Flow › 1. should handle a simple GREETING intent via AI
+
+    ValidationError: User validation failed: username: Path `username` is required.
+
+      at model.Document.invalidate (node_modules/mongoose/lib/document.js:3381:32)
+      at node_modules/mongoose/lib/document.js:3142:17
+      at node_modules/mongoose/lib/schemaType.js:1446:9
+
+  ● Chat Integration & Routing Flow › 2. should detect DATA_QUERY intent, query DB correctly, and generate grounded response
+
+    ValidationError: User validation failed: username: Path `username` is required.
+
+      at model.Document.invalidate (node_modules/mongoose/lib/document.js:3381:32)
+      at node_modules/mongoose/lib/document.js:3142:17
+      at node_modules/mongoose/lib/schemaType.js:1446:9
+
+  ● Chat Integration & Routing Flow › 3. should detect DOCUMENT_QUERY intent and fallback gracefully when no docs present
+
+    ValidationError: User validation failed: username: Path `username` is required.
+
+      at model.Document.invalidate (node_modules/mongoose/lib/document.js:3381:32)
+      at node_modules/mongoose/lib/document.js:3142:17
+      at node_modules/mongoose/lib/schemaType.js:1446:9
+
+  ● Chat Integration & Routing Flow › 4. should log chat history in MongoDB
+
+    ValidationError: User validation failed: username: Path `username` is required.
+
+      at model.Document.invalidate (node_modules/mongoose/lib/document.js:3381:32)
+      at node_modules/mongoose/lib/document.js:3142:17
+      at node_modules/mongoose/lib/schemaType.js:1446:9
+
+Test Suites: 1 failed, 1 total
+Tests:       4 failed, 4 total
+Snapshots:   0 total
+Time:        4.282 s
+Ran all test suites matching tests/integration/chat.test.js.

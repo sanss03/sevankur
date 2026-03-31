@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg:#F8FAF8; --bg2:#F0F4F0; --card:#FFFFFF; --border:#E2E8E2;
+  --primary:#03362a; --primary-l:#4bab60; --primary-ll:#edf7ee;
+  --accent:#8B6914; --text:#121A12; --text2:#445544; --text3:#778877;
+  --danger:#C0392B; --warning:#E67E22; --success:#27AE60; --info:#2471A3;
+  --sidebar-w:240px; --nav-h:64px;
+  --gradient: linear-gradient(135deg, #03362a, #4bab60);
+}
+
+.dark {
+  --bg:#0A0F0A; --bg2:#121812; --card:#1A201A; --border:#2A332A;
+  --primary:#4bab60; --primary-l:#5AC870; --primary-ll:#0A1F0A;
+  --accent:#C9A227; --text:#E8EDE6; --text2:#A8B2A6; --text3:#6A766A;
+  --danger:#E74C3C; --warning:#F39C12; --success:#2ECC71; --info:#3498DB;
+}
+
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body { 
+  font-family: 'DM Sans', sans-serif; 
+  background: var(--bg); 
+  color: var(--text); 
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ── Keyframes ── */
+@keyframes fadeUp   { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn   { from{opacity:0} to{opacity:1} }
+@keyframes scaleIn  { from{opacity:0;transform:scale(0.85)} to{opacity:1;transform:scale(1)} }
+@keyframes slideUp  { from{opacity:0;transform:translateY(32px)} to{opacity:1;transform:translateY(0)} }
+@keyframes blurIn   { from{opacity:0;filter:blur(8px);transform:translateY(16px)} to{opacity:1;filter:blur(0);transform:translateY(0)} }
+@keyframes revealW  { from{clip-path:inset(0 100% 0 0)} to{clip-path:inset(0 0% 0 0)} }
+@keyframes float    { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
+@keyframes pulse    { 0%,100%{opacity:1} 50%{opacity:.45} }
+@keyframes spin     { to{transform:rotate(360deg)} }
+@keyframes drift    { 0%{transform:translate(0,0) scale(1);opacity:.5} 100%{transform:translate(var(--dx),var(--dy)) scale(0);opacity:0} }
+@keyframes progFill { from{width:0%} to{width:100%} }
+@keyframes cursor   { 0%,100%{opacity:1} 50%{opacity:0} }
+@keyframes chatTyp  { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-5px)} }
+@keyframes glow     { 0%,100%{text-shadow:0 0 20px rgba(45,90,39,0.2)} 50%{text-shadow:0 0 40px rgba(45,90,39,0.55)} }
+@keyframes topLine  { from{transform:scaleX(0);opacity:0} to{transform:scaleX(1);opacity:1} }
+@keyframes slideInRight { from{transform:translateX(100%);opacity:0} to{transform:translateX(0);opacity:1} }
+
+/* ── Utility animation classes ── */
+.a-blurIn  { animation:blurIn  .9s cubic-bezier(.22,1,.36,1) both }
+.a-blurIn1 { animation:blurIn  .9s cubic-bezier(.22,1,.36,1) .15s both }
+.a-blurIn2 { animation:blurIn  .9s cubic-bezier(.22,1,.36,1) .30s both }
+.a-blurIn3 { animation:blurIn  .9s cubic-bezier(.22,1,.36,1) .45s both }
+.a-blurIn4 { animation:blurIn  .9s cubic-bezier(.22,1,.36,1) .60s both }
+.a-fadeUp  { animation:fadeUp  .6s ease both }
+.a-fadeUp1 { animation:fadeUp  .6s ease .10s both }
+.a-fadeUp2 { animation:fadeUp  .6s ease .20s both }
+.a-fadeUp3 { animation:fadeUp  .6s ease .30s both }
+.a-fadeUp4 { animation:fadeUp  .6s ease .40s both }
+.a-fadeUp5 { animation:fadeUp  .6s ease .50s both }
+.a-scaleIn { animation:scaleIn .7s cubic-bezier(.34,1.56,.64,1) both }
+.a-float   { animation:float 4s ease-in-out infinite }
+.a-glow    { animation:glow  3s ease-in-out infinite }
+.a-pulse   { animation:pulse 2s infinite }
+
+/* ── Base elements ── */
+input, select, textarea {
+  width:100%; background:var(--bg); border:1.5px solid var(--border); border-radius:8px;
+  padding:10px 14px; font-family:'DM Sans',sans-serif; font-size:14px; color:var(--text);
+  outline:none; transition:border-color .2s, background .3s;
+}
+input:focus, select:focus, textarea:focus { border-color:var(--primary); }
+input::placeholder, textarea::placeholder { color:var(--text3); }
+
+.btn-primary {
+  background:var(--primary); color:#fff; border:none; padding:10px 20px;
+  border-radius:8px; font-family:'DM Sans',sans-serif; font-size:14px;
+  font-weight:500; cursor:pointer; transition:all .2s; letter-spacing:.01em;
+}
+.btn-primary:hover  { background:var(--primary-l); transform:translateY(-1px); }
+.btn-primary:active { transform:translateY(0); }
+
+.btn-outline {
+  background:transparent; color:var(--primary); border:1.5px solid var(--primary);
+  padding:7px 14px; border-radius:8px; font-family:'DM Sans',sans-serif;
+  font-size:13px; font-weight:500; cursor:pointer; transition:all .2s;
+}
+.btn-outline:hover { background:var(--primary-ll); }
+
+.card {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:14px; padding:20px; transition:background .3s, border-color .3s;
+}
+
+.status-paid     { background:#E8F5E9; color:#2E7D32; padding:3px 10px; border-radius:20px; font-size:12px; font-weight:500; }
+.status-pending  { background:#FFF3E0; color:#E65100; padding:3px 10px; border-radius:20px; font-size:12px; font-weight:500; }
+.status-defaulter{ background:#FFEBEE; color:#C62828; padding:3px 10px; border-radius:20px; font-size:12px; font-weight:500; }
+.status-partial  { background:#EDE7F6; color:#4527A0; padding:3px 10px; border-radius:20px; font-size:12px; font-weight:500; }
+.dark .status-paid     { background:#1B3A1E; color:#66BB6A; }
+.dark .status-pending  { background:#3E2A0A; color:#FFB74D; }
+.dark .status-defaulter{ background:#3E1010; color:#EF9A9A; }
+.dark .status-partial  { background:#2A1E3E; color:#CE93D8; }
+
+::-webkit-scrollbar { width:5px; height:5px; }
+::-webkit-scrollbar-track { background:transparent; }
+::-webkit-scrollbar-thumb { background:var(--border); border-radius:10px; }
+
+/* ── Markdown Body Styling ── */
+.markdown-body {
+  line-height: 1.6;
+}
+.markdown-body table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 12px 0;
+  border: 1px solid var(--border);
+  font-size: 0.9em;
+}
+.markdown-body th {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  text-align: left;
+  font-weight: 600;
+}
+.markdown-body td {
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+}
+.markdown-body ul, .markdown-body ol {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+.markdown-body li {
+  margin-bottom: 4px;
+}
+.markdown-body p {
+  margin-bottom: 10px;
+}
+.markdown-body p:last-child {
+  margin-bottom: 0;
+}
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.markdown-body h3 { font-size: 1.1em; }
